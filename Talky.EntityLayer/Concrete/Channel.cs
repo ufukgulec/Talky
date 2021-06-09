@@ -23,7 +23,6 @@ namespace Talky.EntityLayer.Concrete
         public int UserId { get; set; }
         public virtual User User { get; set; }
 
-        public ICollection<ChannelUserRegistry> ChannelUserRegistries { get; set; }
         public ICollection<Message> Messages { get; set; }
     }
 }

@@ -11,7 +11,6 @@ namespace Talky.DataAccessLayer.Concrete.Context
     public class TalkyContext : DbContext
     {
         public DbSet<Channel> Channels { get; set; }
-        public DbSet<ChannelUserRegistry> ChannelUserRegistries { get; set; }
         public DbSet<Message> Messages { get; set; }
         public DbSet<Server> Servers { get; set; }
         public DbSet<ServerUserRegistry> ServerUserRegistries { get; set; }

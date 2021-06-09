@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concrete\Channel.cs" />
-    <Compile Include="Concrete\ChannelUserRegistry.cs" />
     <Compile Include="Concrete\Message.cs" />
     <Compile Include="Concrete\Server.cs" />
     <Compile Include="Concrete\ServerUserRegistry.cs" />

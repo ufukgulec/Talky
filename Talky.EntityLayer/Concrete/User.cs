@@ -24,7 +24,6 @@ namespace Talky.EntityLayer.Concrete
         public ICollection<Server> Servers { get; set; }
         public ICollection<ServerUserRegistry> ServerUserRegistries { get; set; }
         public ICollection<Channel> Channels { get; set; }
-        public ICollection<ChannelUserRegistry> ChannelUserRegistries { get; set; }
         public ICollection<Message> Messages { get; set; }
     }
 }

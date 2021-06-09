@@ -12,7 +12,7 @@ namespace Talky.EntityLayer.Concrete
         [Key]
         public int Id { get; set; }
         [StringLength(1000)]
-        public string Content { get; set; }
+        public string Text { get; set; }
         public DateTime SendingTime { get; set; }
 
         public int? UserId { get; set; }
