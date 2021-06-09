@@ -51,7 +51,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IChannelRepository.cs" />
+    <Compile Include="Abstract\IGenericRepository.cs" />
+    <Compile Include="Abstract\IMessageRepository.cs" />
+    <Compile Include="Abstract\IServerRepository.cs" />
+    <Compile Include="Abstract\IUserRepository.cs" />
     <Compile Include="Concrete\Context\TalkyContext.cs" />
+    <Compile Include="Concrete\Repositories\EfChannelRepository.cs" />
+    <Compile Include="Concrete\Repositories\EfGenericRepository.cs" />
+    <Compile Include="Concrete\Repositories\EfMessageRepository.cs" />
+    <Compile Include="Concrete\Repositories\EfServerRepository.cs" />
+    <Compile Include="Concrete\Repositories\EfUserRepository.cs" />
     <Compile Include="Migrations\202106092022296_mig1.cs" />
     <Compile Include="Migrations\202106092022296_mig1.designer.cs">
       <DependentUpon>202106092022296_mig1.cs</DependentUpon>
