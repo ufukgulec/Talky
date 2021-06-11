@@ -16,7 +16,6 @@ namespace Talky.Mvc.Controllers
         IServerService serverService = new ServerManager(new EfServerRepository());
         public ActionResult Index(int id)
         {
-            ViewBag.serverID = id;
             var obj = serverService.Get(id);
             return View(obj);
         }
