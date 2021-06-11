@@ -20,18 +20,9 @@
                                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
                                 </svg>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action active"><img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"></a>
-                            <a href="#" class="list-group-item list-group-item-action"><img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"></a>
-                            <a href="#" class="list-group-item list-group-item-action"><img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"></a>
-                            <a href="#" class="list-group-item list-group-item-action"><img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"></a>
-                            <a href="#" class="list-group-item list-group-item-action"><img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"></a>
-                            <a href="#" class="list-group-item list-group-item-action"><img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"></a>
-                            <a href="#" class="list-group-item list-group-item-action"><img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"></a>
-                            <a href="#" class="list-group-item list-group-item-action"><img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"></a>
-                            <a href="#" class="list-group-item list-group-item-action"><img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"></a>
-                            <a href="#" class="list-group-item list-group-item-action"><img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"></a>
-                            <a href="#" class="list-group-item list-group-item-action"><img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"></a>
-                            <a href="#" class="list-group-item list-group-item-action"><img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar"></a>
+                            <div id="ServerGetAll">
+                                <!--Jquery-->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -43,8 +34,10 @@
             </div>
         </div>
     </div>
-    @Scripts.Render("~/bundles/myscript")
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/myjquery")
+    @Scripts.Render("~/bundles/myscript")
+
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

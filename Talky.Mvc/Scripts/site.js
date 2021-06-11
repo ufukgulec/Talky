@@ -1,9 +1,10 @@
 window.onload = pageLoad;
 
 function pageLoad() {
-	MessageScroll();
+    MessageScroll();
+    
 }
 function MessageScroll() {
-	var elmnt = document.getElementById("message-area");
-	elmnt.scrollTop = elmnt.scrollHeight;
+    var elmnt = document.getElementById("message-area");
+    elmnt.scrollTop = elmnt.scrollHeight;
 }

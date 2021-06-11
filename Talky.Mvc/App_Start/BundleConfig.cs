@@ -8,6 +8,9 @@ namespace Talky.Mvc
         // Paketleme hakkında daha fazla bilgi için lütfen https://go.microsoft.com/fwlink/?LinkId=301862 adresini ziyaret edin
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/myjquery").Include(
+                        "~/Scripts/myJquery.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/myscript").Include(
                         "~/Scripts/site.js"));
 

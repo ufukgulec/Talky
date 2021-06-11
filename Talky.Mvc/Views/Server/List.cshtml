@@ -1,0 +1,7 @@
+﻿@using Talky.EntityLayer.Concrete
+@model List<Server>
+
+@foreach (var item in Model)
+{
+    <a href="/Server/Index/@item.Id" class="list-group-item list-group-item-action server"><img class="serverlogo" src="@item.ImageUrl" alt="@item."></a>
+}
