@@ -10,6 +10,7 @@ using Talky.DataAccessLayer.Concrete.Repositories;
 
 namespace Talky.Mvc.Controllers
 {
+    [Authorize]
     public class ServerController : Controller
     {
         // GET: Server

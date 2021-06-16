@@ -1,0 +1,61 @@
+﻿@using Talky.EntityLayer.Concrete
+@model List<Message>
+@{
+    Layout = null;
+}
+
+@foreach (var item in Model)
+{
+    if (item.UserId == int.Parse(HttpContext.Current.User.Identity.Name))
+    {
+        <div class="row message sended">
+            <div class="col">
+                <div class="row">
+                    <div class="col-6 mb-2">
+                        <span>
+                            <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+                            @item.User.Name
+                        </span>
+                    </div>
+                    <div class="col-6  mb-2">
+                        <span class="float-end">
+                            @item.SendingTime
+                        </span>
+                    </div>
+                    <hr />
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="fw-lighter">@item.Text</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row message received">
+            <div class="col">
+                <div class="row">
+                    <div class="col-6 mb-2">
+                        <span>
+                            <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+                            @item.User.Name
+                        </span>
+                    </div>
+                    <div class="col-6  mb-2">
+                        <span class="float-end">
+                            @item.SendingTime
+                        </span>
+                    </div>
+                    <hr />
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="fw-lighter">@item.Text</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

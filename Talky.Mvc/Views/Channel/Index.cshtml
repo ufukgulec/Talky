@@ -8,7 +8,7 @@
     <div class="list-group">
         <div style="z-index: 100; border-bottom:1px solid #d3d3d4; padding: 20px; margin-bottom: 20px;" class="list-group-item list-group-item-action sticky-top bg-dark text-white" aria-current="true">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">Server Name</h5>
+                <h5 class="mb-1 serverName" id="server-@Model.ServerId">@Model.Server.Name</h5>
                 <small>Server Owner</small>
             </div>
             <div class="d-grid gap-2">
@@ -16,7 +16,7 @@
             </div>
         </div>
         <div id="ChannelGetAll">
-
+            <!--Jquery-->
         </div>
     </div>
 </div>
@@ -29,7 +29,7 @@
             </svg>
         </div>
         <div class="col-6">
-            <h5 id="current" data-serverid="@Model.ServerId" class="mb-1">@Model.Name</h5>
+            <h5 id="current" data-serverid="@Model.ServerId" data-channelid="@Model.Id" class="mb-1">@Model.Name</h5>
         </div>
         <div class="col-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
@@ -38,198 +38,95 @@
         </div>
     </div>
     <div class="row m-0 messages" id="message-area">
-        <div class="col">
-            <div class="row message received">
-                <div class="col">
-                    <div class="row">
-                        <div class="col-6 mb-2">
-                            <span>
-                                <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                ufukgulecc
-                            </span>
+        <div class="col" id="MessageGetAll">
+            @*@foreach (var item in Model.Messages)
+                {
+                    if (item.UserId == int.Parse(HttpContext.Current.User.Identity.Name))
+                    {
+                        <div class="row message sended">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-6 mb-2">
+                                        <span>
+                                            <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+                                            @item.User.Name
+                                        </span>
+                                    </div>
+                                    <div class="col-6  mb-2">
+                                        <span class="float-end">
+                                            @item.SendingTime
+                                        </span>
+                                    </div>
+                                    <hr />
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="fw-lighter">@item.Text</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-6  mb-2">
-                            <span class="float-end">
-                                10.06.2021 21:56
-                            </span>
+                    }
+                    else
+                    {
+                        <div class="row message received">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-6 mb-2">
+                                        <span>
+                                            <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+                                            @item.User.Name
+                                        </span>
+                                    </div>
+                                    <div class="col-6  mb-2">
+                                        <span class="float-end">
+                                            @item.SendingTime
+                                        </span>
+                                    </div>
+                                    <hr />
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="fw-lighter">@item.Text</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <hr />
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="fw-lighter">asdasdasdasdasd</p>
+                    }
+                }*@
+
+            @*<div class="row message sended">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-6  mb-2">
+                                <span class="float-start">
+                                    10.06.2021 21:56
+                                </span>
+                            </div>
+                            <div class="col-6 mb-2">
+                                <span class="float-end">
+                                    <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
+                                    yunusbaser
+                                </span>
+                            </div>
+                            <hr />
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row message received">
-                <div class="col">
-                    <div class="row">
-                        <div class="col-6 mb-2">
-                            <span>
-                                <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                ufukgulecc
-                            </span>
-                        </div>
-                        <div class="col-6  mb-2">
-                            <span class="float-end">
-                                10.06.2021 21:56
-                            </span>
-                        </div>
-                        <hr />
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="fw-lighter">asdasdasdasdasd</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row message received">
-                <div class="col">
-                    <div class="row">
-                        <div class="col-6 mb-2">
-                            <span>
-                                <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                ufukgulecc
-                            </span>
-                        </div>
-                        <div class="col-6  mb-2">
-                            <span class="float-end">
-                                10.06.2021 21:56
-                            </span>
-                        </div>
-                        <hr />
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="fw-lighter">asdasdasdasdasd</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row message sended">
-                <div class="col">
-                    <div class="row">
-                        <div class="col-6  mb-2">
-                            <span class="float-start">
-                                10.06.2021 21:56
-                            </span>
-                        </div>
-                        <div class="col-6 mb-2">
-                            <span class="float-end">
-                                <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                yunusbaser
-                            </span>
-                        </div>
-                        <hr />
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="fw-lighter">asdasdasdasdasd</p>
+                        <div class="row">
+                            <div class="col">
+                                <p class="fw-lighter">asdasdasdasdasd</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row message received">
-                <div class="col">
-                    <div class="row">
-                        <div class="col-6 mb-2">
-                            <span>
-                                <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                ufukgulecc
-                            </span>
-                        </div>
-                        <div class="col-6  mb-2">
-                            <span class="float-end">
-                                10.06.2021 21:56
-                            </span>
-                        </div>
-                        <hr />
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="fw-lighter">asdasdasdasdasd</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row message sended">
-                <div class="col">
-                    <div class="row">
-                        <div class="col-6  mb-2">
-                            <span class="float-start">
-                                10.06.2021 21:56
-                            </span>
-                        </div>
-                        <div class="col-6 mb-2">
-                            <span class="float-end">
-                                <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                yunusbaser
-                            </span>
-                        </div>
-                        <hr />
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="fw-lighter">asdasdasdasdasd</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row message received">
-                <div class="col">
-                    <div class="row">
-                        <div class="col-6 mb-2">
-                            <span>
-                                <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                ufukgulecc
-                            </span>
-                        </div>
-                        <div class="col-6  mb-2">
-                            <span class="float-end">
-                                10.06.2021 21:56
-                            </span>
-                        </div>
-                        <hr />
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="fw-lighter">asdasdasdasdasd</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row message sended">
-                <div class="col">
-                    <div class="row">
-                        <div class="col-6  mb-2">
-                            <span class="float-start">
-                                10.06.2021 21:56
-                            </span>
-                        </div>
-                        <div class="col-6 mb-2">
-                            <span class="float-end">
-                                <img class="serverlogo" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar">
-                                yunusbaser
-                            </span>
-                        </div>
-                        <hr />
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="fw-lighter">asdasdasdasdasd</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </div>*@
         </div>
     </div>
-    <div class="row m-0 message-inputs">
-        <form>
+    <div class="row m-0 message-inputs" id="input">
+        <form method="post" id="msg">
+            <input name="ChannelId" hidden value="@Model.Id" />
+            <input name="UserId" hidden value="@HttpContext.Current.User.Identity.Name" />
             <div class="input-group ">
-                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-success" type="button" id="button-addon2">Button</button>
+                <input type="text" name="Text" class="form-control" placeholder="Send message" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-success" type="button" onclick="Message()" id="button-addon2">Send</button>
             </div>
         </form>
     </div>
@@ -245,6 +142,3 @@
         </div>
     </div>
 </div>
-<script>
-
-</script>

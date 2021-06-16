@@ -13,10 +13,11 @@ namespace Talky.Mvc.Controllers
     public class ChannelController : Controller
     {
         IChannelService channelService = new ChannelManager(new EfChannelRepository());
-
+        IMessageService messageService = new MessageManager(new EfMessageRepository());
         public ActionResult Index(int id)
         {
             var obj = channelService.Get(id);
+            obj.Messages = messageService.List(x => x.ChannelId == obj.Id);
             return View(obj);
         }
         public PartialViewResult List(int id)
